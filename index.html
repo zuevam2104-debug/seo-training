@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>SEO PRO Agency</title>
+<title>SEO Studio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,12 +11,74 @@
 <a href="index.html">Главная</a>
 <a href="services.html">Услуги</a>
 <a href="contact.html">Контакты</a>
+<a href="cases.html">Кейсы</a>
 </nav>
 
-<h1>SEO PRO Agency</h1>
-<p>Продвигаем сайты в ТОП Google и Яндекс</p>
+<section class="hero section">
+<div class="container">
+<h1>SEO-продвижение с измеримым ростом прибыли</h1>
+<p>Комплексная стратегия, аналитика и масштабирование бизнеса</p>
+<a href="contact.html" class="btn">Получить стратегию</a>
+</div>
+</section>
 
-<a class="btn" href="services.html">Смотреть услуги</a>
+<section class="section">
+<div class="container">
+<h2>Наши направления</h2>
+<div class="cards">
+
+<div class="card">
+<h3>Технический аудит</h3>
+<p>Устраняем ошибки, ускоряем сайт и повышаем индексацию.</p>
+</div>
+
+<div class="card">
+<h3>Контент и семантика</h3>
+<p>Стратегия роста трафика через экспертный контент.</p>
+</div>
+
+<div class="card">
+<h3>Линкбилдинг</h3>
+<p>Увеличение авторитета домена и роста позиций.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2>Кейсы</h2>
+
+<div class="case">
+<h3>Интернет-магазин одежды</h3>
+<p>Рост трафика +230% за 6 месяцев.</p>
+</div>
+
+<div class="case">
+<h3>B2B SaaS проект</h3>
+<p>Выход в ТОП-3 по 40 ключевым запросам.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 SEO Studio — Digital Marketing Agency
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const position = card.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+    if(position < screenPosition){
+      card.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>

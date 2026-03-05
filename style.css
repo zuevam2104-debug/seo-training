@@ -1,39 +1,138 @@
+/* ===== БАЗА ===== */
 body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
-  text-align: center;
-  padding: 40px;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f8ff;
+  color: #2b2b2b;
+  scroll-behavior: smooth;
 }
 
+h1, h2, h3 {
+  margin: 0 0 20px;
+}
+
+.section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
 nav {
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  background: white;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  z-index: 1000;
 }
 
 nav a {
-  color: #3b82f6;
-  margin: 0 15px;
   text-decoration: none;
-  font-weight: bold;
+  color: #555;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-h1 {
-  margin-bottom: 20px;
+nav a:hover {
+  color: #a678ff;
 }
 
-.card {
-  background: #1e293b;
-  padding: 20px;
-  margin: 20px auto;
-  width: 300px;
-  border-radius: 15px;
+/* ===== HERO ===== */
+.hero {
+  padding: 140px 20px;
+  background: linear-gradient(135deg, #f3efff, #e9f1ff);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  font-size: 20px;
+  opacity: 0.7;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 25px;
-  background: #3b82f6;
+  margin-top: 30px;
+  padding: 16px 40px;
+  background: #a678ff;
   color: white;
+  border-radius: 50px;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #8f5cff;
+  transform: translateY(-3px);
+}
+
+/* ===== КАРТОЧКИ ===== */
+.cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  width: 300px;
   border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  transition: 0.4s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* ===== КЕЙСЫ ===== */
+.case {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+/* ===== ФУТЕР ===== */
+footer {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f0ecff;
+  margin-top: 80px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
 }

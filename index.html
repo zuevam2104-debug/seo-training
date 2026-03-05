@@ -4,8 +4,44 @@
 <meta charset="UTF-8">
 <title>SEO Studio</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+<script>
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const position = card.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+    if(position < screenPosition){
+      card.classList.add('show');
+    }
+  });
+});
+</script>
+<script>
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
+
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const increment = target / speed;
+
+    if(count < target) {
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(updateCount, 15);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  updateCount();
+});
+</script>
 <body>
+  <div class="bg-blur blur1"></div>
+<div class="bg-blur blur2"></div>
 
 <nav>
 <a href="index.html">Главная</a>
@@ -19,6 +55,30 @@
 <h1>SEO-продвижение с измеримым ростом прибыли</h1>
 <p>Комплексная стратегия, аналитика и масштабирование бизнеса</p>
 <a href="contact.html" class="btn">Получить стратегию</a>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<h2>Результаты наших клиентов</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3><span class="counter" data-target="230">0</span>%</h3>
+<p>Рост трафика</p>
+</div>
+
+<div class="card">
+<h3><span class="counter" data-target="180">0</span>%</h3>
+<p>Рост выручки</p>
+</div>
+
+<div class="card">
+<h3><span class="counter" data-target="95">0</span>%</h3>
+<p>Проектов в ТОП-10</p>
+</div>
+
+</div>
 </div>
 </section>
 
